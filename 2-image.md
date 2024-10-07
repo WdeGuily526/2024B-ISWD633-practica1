@@ -4,9 +4,10 @@ Es un archivo único que contiene todos los programas, librerías, dependencias 
 
 
 ## ¿Cuál es la relación entre una imagen y un contenedor? 
-# COMPLETAR 
+El contenedor necesita tener una imagen para poderse instanciar para crear el contenedor y así guardar lo que se desea es decir, aplicaciones, código, entre otros.
 
 ![Imagen y contenedores](img/imagenContenedores.JPG)
+
 ## Comandos para imágenes
 
 ### Descargar imagen
@@ -25,12 +26,13 @@ docker pull <nombre imagen>:<tag>
 
 Descargar la imagen **hello-world**
 # COMPLETAR
+![image](https://github.com/user-attachments/assets/1d2fcdf5-1c4e-4b39-97de-f3060683c2ec)
 
 **¿Qué es nginx**
-# COMPLETAR 
+Nginx es un servidor web y proxy inverso de código abierto, diseñado para manejar de manera eficiente grandes cantidades de conexiones concurrentes. hoy en día también sirve como proxy inverso, balanceador de carga HTTP y proxy de correo electrónico para IMAP, POP3 y SMTP.
 
 Descargar la imagen  **nginx** en la versión **alpine**
-# COMPLETAR
+![image](https://github.com/user-attachments/assets/9042a39f-9d19-4a56-975c-433b2a331b82)
 
 ### Listar imágenes
 
@@ -39,6 +41,7 @@ docker images
 ```
 
 # COLOCAR UNA CAPTURA DE PANTALLA DEL RESULTADO 
+![image](https://github.com/user-attachments/assets/9d487753-f697-40f8-a6c2-2c40e59aa0bc)
 
 **Identificadores**
 
@@ -53,11 +56,67 @@ docker inspect <nombre imagen>:<tag>
 ```
 
 Inspeccionar la imagen hello-world 
-# COMPLETAR
+C:\Users\wboch\Downloads>docker inspect hello-world
+[
+    {
+        "Id": "sha256:91fb4b041da273d5a3273b6d587d62d518300a6ad268b28628f74997b93171b2",
+        "RepoTags": [
+            "hello-world:latest"
+        ],
+        "RepoDigests": [
+            "hello-world@sha256:91fb4b041da273d5a3273b6d587d62d518300a6ad268b28628f74997b93171b2"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-05-02T16:49:27Z",
+        "DockerVersion": "27.2.0",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "/hello"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 15288,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "overlayfs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:ac28800ec8bb38d5c35b49d45a6ac4777544941199075dff8c4eb63e093aa81e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2024-10-07T00:43:54.712293266Z"
+        }
+    }
+]
 
 **¿Con qué algoritmo se está generando el ID de la imagen**
 # COMPLETAR
-
+SHA256 el algoritmo de cifrado.
 ### Filtrar imágenes
 
 ```
@@ -73,7 +132,8 @@ docker rmi <nombre imagen>:<tag>
 ```
 
 Eliminar la imagen hello-world 
-# COMPLETAR
+![image](https://github.com/user-attachments/assets/351f01fe-688a-4c80-a1e5-24031c8b1256)
+
 
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
 Cuando eliminas una imagen Docker, Docker no elimina automáticamente los contenedores que se han creado a partir de esa imagen. Esto significa que, aunque hayas eliminado la imagen, el contenedor seguirá ejecutándose normalmente.  
